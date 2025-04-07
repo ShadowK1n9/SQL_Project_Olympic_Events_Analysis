@@ -444,9 +444,7 @@ The **USA** dominated Summer Games (e.g., 186 golds in 1984), while **USSR/Russi
 
 ### **5. Regional Strengths & Legacy**  
 Nigeria’s **Men’s Football team** secured **50 medals**, emphasizing regional prowess. Geopolitical shifts, like the USSR’s dissolution and Germany’s reunification, are mirrored in medal trends, illustrating how the Olympics reflect global history.
-### Closing thoughts
-**Closing Thoughts**  
-
+## Closing thoughts 
 This project was more than just crunching numbers, it was a deep dive into over a century of Olympic history, all while leveling up my SQL game. Wrangling complex queries (think CTEs, window functions, and nested joins) taught me how to transform messy data into clear insights, like uncovering medal trends or pinpointing record-breaking athletes.  
 
 The analysis revealed fascinating patterns: the dominance of certain nations, the rise and fall of sports, and the quiet persistence of underdog countries. But it’s worth noting that the dataset stops at 2016, meaning recent events like Paris 2024 aren’t included, a reminder that history’s lessons are always evolving.  
