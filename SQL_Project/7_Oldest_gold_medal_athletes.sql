@@ -1,7 +1,7 @@
 -- Quesiton: Fetch deails of the oldest athletes to win a gold medal
 With ranked_athletes as
 (
-    SELECT name, sex, age, team, games, sport, city, Event, medal,
+    SELECT name, sex, age, team, games, sport, city, event, medal, 
             rank() OVER(ORDER BY age DESC) as ranking
     FROM athlete_events
         WHERE medal = 'Gold'

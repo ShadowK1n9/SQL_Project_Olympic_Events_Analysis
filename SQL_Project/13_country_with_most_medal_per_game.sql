@@ -39,9 +39,9 @@ WITH awarded_countries AS (
     SELECT 
         ae.games,
         nr.region AS country,
-        COUNT(CASE WHEN ae.medal = 'Gold' THEN 1 ELSE NULL END) AS gold_count,
-        COUNT(CASE WHEN ae.medal = 'Silver' THEN 1 ELSE NULL END) AS silver_count,
-        COUNT(CASE WHEN ae.medal = 'Bronze' THEN 1 ELSE NULL END) AS bronze_count
+        COUNT(CASE WHEN ae.medal = 'Gold' THEN 1 END) AS gold_count,
+        COUNT(CASE WHEN ae.medal = 'Silver' THEN 1 END) AS silver_count,
+        COUNT(CASE WHEN ae.medal = 'Bronze' THEN 1 END) AS bronze_count
     FROM athlete_events ae
     JOIN noc_regions nr ON ae.NOC = nr.NOC
     WHERE ae.medal <> 'NA'
@@ -61,11 +61,10 @@ ranked_countries AS (
 )
 SELECT
     games,
-    GROUP_CONCAT(DISTINCT CASE WHEN gold_rank = 1 THEN CONCAT(country, ' (', gold_count, ' Gold)') END) AS top_gold,
-    GROUP_CONCAT(DISTINCT CASE WHEN silver_rank = 1 THEN CONCAT(country, ' (', silver_count, ' Silver)') END) AS top_silver,
-    GROUP_CONCAT(DISTINCT CASE WHEN bronze_rank = 1 THEN CONCAT(country, ' (', bronze_count, ' Bronze)') END) AS top_bronze
+    GROUP_CONCAT(CASE WHEN gold_rank = 1 THEN CONCAT(country, ' (', gold_count, ' Gold)') END) AS top_gold,
+    GROUP_CONCAT(CASE WHEN silver_rank = 1 THEN CONCAT(country, ' (', silver_count, ' Silver)') END) AS top_silver,
+    GROUP_CONCAT(CASE WHEN bronze_rank = 1 THEN CONCAT(country, ' (', bronze_count, ' Bronze)') END) AS top_bronze
 FROM ranked_countries
-WHERE gold_rank = 1 OR silver_rank = 1 OR bronze_rank = 1
 GROUP BY games
 ORDER BY games;
 
@@ -107,3 +106,9 @@ SELECT
 FROM ranked_countries
 GROUP BY games
 ORDER BY games;
+
+
+
+
+
+
