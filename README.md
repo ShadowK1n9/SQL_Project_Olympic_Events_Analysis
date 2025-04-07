@@ -214,7 +214,7 @@ SELECT
 FROM ranked_athletes
 WHERE ranking <= 5;
 ```
-![Top athletes to with most gold medals](assets\1_top_gold_medalists.png)
+![Top athletes to with most gold medals](assets/1_top_gold_medalists.png)
 *Bar graph visualizing the top athletes with most gold medals; Chatgpt generated this graph from my SQL query results*
 
 The standout performer was **Michael Phelps** with a record-breaking **23 gold medals** in *Swimming* for the **United States**. He was followed by legendary figures like **Ray Ewry** with 10 golds in *Athletics*, and a three-way tie with **Larysa Latynina**, **Carl Lewis**, and **Paavo Nurmi**, each securing 9 golds in their respective sports.
